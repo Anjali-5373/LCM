@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+int lcmx(int,int);
+int main()
+{
+	int a,b,lcm;
+	printf("Enter two positive numbers to find LCM :\n");
+	scanf("%d%d",&a,&b);
+	lcm=lcmx(a,b);
+	printf("\n LCM of %d and %d is %d\n",a,b,lcm);
+	return 0;
+}
+
+int lcmx(int a,int b)
+{
+	static int lcmy=1;
+	if(lcmy%a==0 && lcmy%b==0)
+	{
+		return lcmy;
+	}
+	else
+	{
+		lcmy++;
+		lcmx(a,b);
+		return lcmy;
+	}
+}
